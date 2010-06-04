@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BudgetManager.Common", "BudgetManager.Common\BudgetManager.Common.csproj", "{4930A651-5299-4CEF-952A-2FC5CE786E38}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BudgetManager.Adapters.BankHapoalim", "BudgetManager.Adapters.BankHapoalim\BudgetManager.Adapters.BankHapoalim.csproj", "{F364866B-B9B7-4CF6-9338-161488EDB0C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BudgetManager.Console", "BudgetManager.Console\BudgetManager.Console.csproj", "{23BB62D3-BC12-4B95-BB75-30FB256E73ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BudgetManager", "BudgetManager\BudgetManager.csproj", "{4720CCD1-7EF5-4DCE-9F80-33449E5B4431}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BudgetManager.GUI.WinForms", "BudgetManager.GUI.WinForms\BudgetManager.GUI.WinForms.csproj", "{0873B147-AD1D-4477-B3FD-E6A4C51F59F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BudgetManager.Adapters.Isracard", "BudgetManager.Adapters.Isracard\BudgetManager.Adapters.Isracard.csproj", "{3143395E-BFC8-4202-8293-65A4ECA593A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BudgetManager.Adapters.LeumiCard", "BudgetManager.Adapters.LeumiCard\BudgetManager.Adapters.LeumiCard.csproj", "{D15C13E5-0B9E-47C8-B28E-7D6FEC5E2257}"
+EndProject
+Global
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4930A651-5299-4CEF-952A-2FC5CE786E38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4930A651-5299-4CEF-952A-2FC5CE786E38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4930A651-5299-4CEF-952A-2FC5CE786E38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4930A651-5299-4CEF-952A-2FC5CE786E38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F364866B-B9B7-4CF6-9338-161488EDB0C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F364866B-B9B7-4CF6-9338-161488EDB0C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F364866B-B9B7-4CF6-9338-161488EDB0C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F364866B-B9B7-4CF6-9338-161488EDB0C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23BB62D3-BC12-4B95-BB75-30FB256E73ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23BB62D3-BC12-4B95-BB75-30FB256E73ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23BB62D3-BC12-4B95-BB75-30FB256E73ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23BB62D3-BC12-4B95-BB75-30FB256E73ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4720CCD1-7EF5-4DCE-9F80-33449E5B4431}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4720CCD1-7EF5-4DCE-9F80-33449E5B4431}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4720CCD1-7EF5-4DCE-9F80-33449E5B4431}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4720CCD1-7EF5-4DCE-9F80-33449E5B4431}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0873B147-AD1D-4477-B3FD-E6A4C51F59F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0873B147-AD1D-4477-B3FD-E6A4C51F59F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0873B147-AD1D-4477-B3FD-E6A4C51F59F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0873B147-AD1D-4477-B3FD-E6A4C51F59F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3143395E-BFC8-4202-8293-65A4ECA593A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3143395E-BFC8-4202-8293-65A4ECA593A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3143395E-BFC8-4202-8293-65A4ECA593A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3143395E-BFC8-4202-8293-65A4ECA593A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D15C13E5-0B9E-47C8-B28E-7D6FEC5E2257}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D15C13E5-0B9E-47C8-B28E-7D6FEC5E2257}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D15C13E5-0B9E-47C8-B28E-7D6FEC5E2257}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D15C13E5-0B9E-47C8-B28E-7D6FEC5E2257}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

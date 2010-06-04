@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0873B147-AD1D-4477-B3FD-E6A4C51F59F7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BudgetManager.GUI.WinForms</RootNamespace>
+    <AssemblyName>BudgetManager.GUI.WinForms</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ApplicationIcon>BudgetManager.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutForm.Designer.cs">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CategoriesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CategoriesForm.Designer.cs">
+      <DependentUpon>CategoriesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CategorizedSummaryPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CategorizedSummaryPanel.Designer.cs">
+      <DependentUpon>CategorizedSummaryPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ImportTransactionsSourceList.cs" />
+    <Compile Include="Data\ImportTransactionsSourcesXmlAdapter.cs" />
+    <Compile Include="Dialogs\CategoryPickerPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\CategoryPickerPopup.Designer.cs">
+      <DependentUpon>CategoryPickerPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DataGridViewCategoryCell.cs" />
+    <Compile Include="Controls\DataGridViewCategoryColumn.cs" />
+    <Compile Include="Controls\DataGridViewCategoryControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\DataGridViewDateCell.cs" />
+    <Compile Include="Controls\DataGridViewDateColumn.cs" />
+    <Compile Include="Controls\DataGridViewDateControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\DataGridViewNumberCell.cs" />
+    <Compile Include="Controls\DataGridViewNumberColumn.cs" />
+    <Compile Include="Controls\DataGridViewNumberControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Dialogs\DatePickerPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\DatePickerPopup.Designer.cs">
+      <DependentUpon>DatePickerPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DatesSearchPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\DatesSearchPanel.Designer.cs">
+      <DependentUpon>DatesSearchPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\ImportTransactionsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\ImportTransactionsDialog.Designer.cs">
+      <DependentUpon>ImportTransactionsDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\ImportTransactionsPreviewDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\ImportTransactionsPreviewDialog.Designer.cs">
+      <DependentUpon>ImportTransactionsPreviewDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\IncomeExpensesPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\IncomeExpensesPanel.Designer.cs">
+      <DependentUpon>IncomeExpensesPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ITabPageSelectionChangeHandler.cs" />
+    <Compile Include="Controls\TransactionsPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TransactionsPanel.Designer.cs">
+      <DependentUpon>TransactionsPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\HeaderColorScheme.cs" />
+    <Compile Include="Data\HeaderColorSchemeList.cs" />
+    <Compile Include="Data\ImportTransactionsSource.cs" />
+    <Compile Include="Data\YearSummaryByCategoryRow.cs" />
+    <Compile Include="Dialogs\AnalyseCategoriesPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\AnalyseCategoriesPopup.Designer.cs">
+      <DependentUpon>AnalyseCategoriesPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AboutForm.resx">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CategoriesForm.resx">
+      <DependentUpon>CategoriesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\CategorizedSummaryPanel.resx">
+      <DependentUpon>CategorizedSummaryPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\CategoryPickerPopup.resx">
+      <DependentUpon>CategoryPickerPopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\DatePickerPopup.resx">
+      <DependentUpon>DatePickerPopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\DatesSearchPanel.resx">
+      <DependentUpon>DatesSearchPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\ImportTransactionsDialog.resx">
+      <DependentUpon>ImportTransactionsDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\ImportTransactionsPreviewDialog.resx">
+      <DependentUpon>ImportTransactionsPreviewDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\IncomeExpensesPanel.resx">
+      <DependentUpon>IncomeExpensesPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TransactionsPanel.resx">
+      <DependentUpon>TransactionsPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\AnalyseCategoriesPopup.resx">
+      <DependentUpon>AnalyseCategoriesPopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingsForm.resx">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="SettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettingsForm.Designer.cs">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\CommonMethods.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BudgetManager.Common\BudgetManager.Common.csproj">
+      <Project>{4930A651-5299-4CEF-952A-2FC5CE786E38}</Project>
+      <Name>BudgetManager.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BudgetManager\BudgetManager.csproj">
+      <Project>{4720CCD1-7EF5-4DCE-9F80-33449E5B4431}</Project>
+      <Name>BudgetManager</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BudgetManager.ico" />
+    <Content Include="JYA.TIF" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
