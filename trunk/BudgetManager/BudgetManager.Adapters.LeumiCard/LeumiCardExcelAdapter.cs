@@ -5,7 +5,6 @@ using System.Text;
 using Excel = Microsoft.Office.Interop.Excel;
 using System.IO;
 using BudgetManager.Data;
-using BudgetManager.Common;
 
 namespace BudgetManager.Adapters.LeumiCard
 {

@@ -10,6 +10,7 @@ using BudgetManager.Data;
 using BudgetManager.BusinessLayar;
 using BudgetManager.GUI.WinForms.Data;
 using System.Windows.Forms.DataVisualization.Charting;
+using System.Globalization;
 
 namespace BudgetManager.GUI.WinForms.Controls
 {
@@ -108,14 +109,16 @@ namespace BudgetManager.GUI.WinForms.Controls
             this.chartSummary.Titles.Add(category.Name);
             this.chartSummary.Titles[0].Font = new Font("Arial", 14, FontStyle.Bold);
             this.chartSummary.RightToLeft = RightToLeft.No;
-            this.chartSummary.ChartAreas[0].Area3DStyle.Enable3D = true;
+            this.chartSummary.ChartAreas[0].Area3DStyle.Enable3D = false;
+            this.chartSummary.ChartAreas[0].AxisX.Interval = 1;
             foreach (YearSummaryByCategoryRow row in summaryRowsList)
             {
                 this.chartSummary.Series.Add(row.Category);
                 for (int month = 0; month < row.NumberOfMonths; month++)
                 {
                     double value = row[month] == null ? 0 : (double)row[month];
-                    this.chartSummary.Series[row.Category].Points.AddY(value);
+                    //this.chartSummary.Series[row.Category].Points.AddY(value);
+                    this.chartSummary.Series[row.Category].Points.AddXY(CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(month + 1), value);
                 }
                 this.chartSummary.Series[row.Category].ChartType = SeriesChartType.StackedColumn;
                 this.chartSummary.Series[row.Category].IsValueShownAsLabel = false;
@@ -212,7 +215,7 @@ namespace BudgetManager.GUI.WinForms.Controls
                 case ChartElementType.DataPoint:
                     DataPoint data = e.HitTestResult.Object as DataPoint;
                     String value = data == null ? "" : data.YValues[0].ToString();
-                    e.Text = String.Format("{0} : {1}", e.HitTestResult.Series.Name, value);
+                    e.Text = String.Format("{0} ({1}) : {2}", e.HitTestResult.Series.Name, data.AxisLabel, value);
                     break;
             }
         }
