@@ -19,6 +19,26 @@ namespace BudgetManager.GUI.WinForms.Controls
         private IDictionary<Category, YearSummaryByCategoryRow> _summaryRows = 
             new Dictionary<Category, YearSummaryByCategoryRow>();
 
+        private Color[] _colorPallete = new Color[] {
+            Color.CornflowerBlue,
+            Color.Orange,
+            Color.LimeGreen,
+            Color.IndianRed,
+            Color.LightSeaGreen,
+            Color.BurlyWood,
+            Color.Orchid,
+            Color.DarkGray,
+            Color.Gold,
+            Color.DarkBlue,
+            Color.LightSalmon,
+            Color.DarkGreen,
+            Color.Purple,
+            Color.DarkRed,
+            Color.GreenYellow,
+            Color.Bisque,
+            Color.Beige
+        };
+
 
         public CategorizedSummaryPanel()
         {
@@ -103,14 +123,24 @@ namespace BudgetManager.GUI.WinForms.Controls
                 null : this.treeCategories.SelectedNode.Tag as Category;
             if (category == null) return;
             List<YearSummaryByCategoryRow> summaryRowsList = this._summaryRows.Values.ToList<YearSummaryByCategoryRow>();
-            this.chartSummary.AntiAliasing = AntiAliasingStyles.All;
-            this.chartSummary.TextAntiAliasingQuality = TextAntiAliasingQuality.High;
+            //this.chartSummary.AntiAliasing = AntiAliasingStyles.All;
+            //this.chartSummary.TextAntiAliasingQuality = TextAntiAliasingQuality.High;
             this.chartSummary.Titles.Clear();
             this.chartSummary.Titles.Add(category.Name);
             this.chartSummary.Titles[0].Font = new Font("Arial", 14, FontStyle.Bold);
             this.chartSummary.RightToLeft = RightToLeft.No;
             this.chartSummary.ChartAreas[0].Area3DStyle.Enable3D = false;
             this.chartSummary.ChartAreas[0].AxisX.Interval = 1;
+            this.chartSummary.ChartAreas[0].AxisX.IsReversed = true;
+            this.chartSummary.ChartAreas[0].BackColor = Color.LightYellow;
+            this.chartSummary.ChartAreas[0].BackSecondaryColor = Color.White;
+            this.chartSummary.ChartAreas[0].BackGradientStyle = GradientStyle.LeftRight;
+            this.chartSummary.ChartAreas[0].BorderColor = Color.Black;
+            this.chartSummary.ChartAreas[0].BorderDashStyle = ChartDashStyle.Solid;
+            this.chartSummary.ChartAreas[0].BorderWidth = 1;
+            this.chartSummary.ChartAreas[0].ShadowOffset = 3;
+            //this.chartSummary.BorderSkin.SkinStyle = BorderSkinStyle.Emboss;
+            int colorIndex = 0;
             foreach (YearSummaryByCategoryRow row in summaryRowsList)
             {
                 this.chartSummary.Series.Add(row.Category);
@@ -123,6 +153,12 @@ namespace BudgetManager.GUI.WinForms.Controls
                 this.chartSummary.Series[row.Category].ChartType = SeriesChartType.StackedColumn;
                 this.chartSummary.Series[row.Category].IsValueShownAsLabel = false;
                 this.chartSummary.Series[row.Category].IsVisibleInLegend = true;
+                this.chartSummary.Series[row.Category].Color =
+                    Utilities.CommonMethods.GetLighterColor(this._colorPallete[colorIndex]);
+                this.chartSummary.Series[row.Category].BackSecondaryColor =
+                    Utilities.CommonMethods.GetDarkerColor(this._colorPallete[colorIndex]);
+                this.chartSummary.Series[row.Category].BackGradientStyle = GradientStyle.LeftRight;
+                colorIndex++;
             }
         }
 
