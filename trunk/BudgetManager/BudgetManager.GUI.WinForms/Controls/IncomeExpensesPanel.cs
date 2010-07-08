@@ -62,14 +62,16 @@ namespace BudgetManager.GUI.WinForms.Controls
         private void UpdateChart()
         {
             this.chartIncomeExpenses.Series.Clear();
-            this.chartIncomeExpenses.AntiAliasing = AntiAliasingStyles.All;
-            this.chartIncomeExpenses.TextAntiAliasingQuality = TextAntiAliasingQuality.High;
             this.chartIncomeExpenses.Titles.Clear();
             this.chartIncomeExpenses.Titles.Add("הוצאות מול הכנסות");
             this.chartIncomeExpenses.Titles[0].Font = new Font("Arial", 14, FontStyle.Bold);
-            this.chartIncomeExpenses.RightToLeft = RightToLeft.No;
+            if (this.fldYear.SelectedItem == null) return; 
+            //this.chartIncomeExpenses.AntiAliasing = AntiAliasingStyles.All;
+            //this.chartIncomeExpenses.TextAntiAliasingQuality = TextAntiAliasingQuality.High;
+            //this.chartIncomeExpenses.RightToLeft = RightToLeft.No;
             this.chartIncomeExpenses.ChartAreas[0].Area3DStyle.Enable3D = false;
             this.chartIncomeExpenses.ChartAreas[0].AxisX.Interval = 1;
+            this.chartIncomeExpenses.ChartAreas[0].AxisX.IsReversed = true;
             String incomeTitle = "הכנסות";
             this.chartIncomeExpenses.Series.Add(incomeTitle);
             for (int month = 0; month < 12; month++)
@@ -81,7 +83,11 @@ namespace BudgetManager.GUI.WinForms.Controls
             this.chartIncomeExpenses.Series[incomeTitle].ChartType = SeriesChartType.Column;
             this.chartIncomeExpenses.Series[incomeTitle].IsValueShownAsLabel = false;
             this.chartIncomeExpenses.Series[incomeTitle].IsVisibleInLegend = true;
-            this.chartIncomeExpenses.Series[incomeTitle].Color = Color.Green;
+            this.chartIncomeExpenses.Series[incomeTitle].Color =
+                Utilities.CommonMethods.GetLighterColor(Color.LimeGreen);
+            this.chartIncomeExpenses.Series[incomeTitle].BackSecondaryColor = 
+                Utilities.CommonMethods.GetDarkerColor(Color.LimeGreen);
+            this.chartIncomeExpenses.Series[incomeTitle].BackGradientStyle = GradientStyle.LeftRight;
             String expensesTitle = "הוצאות";
             this.chartIncomeExpenses.Series.Add(expensesTitle);
             for (int month = 0; month < 12; month++)
@@ -93,7 +99,20 @@ namespace BudgetManager.GUI.WinForms.Controls
             this.chartIncomeExpenses.Series[expensesTitle].ChartType = SeriesChartType.Column;
             this.chartIncomeExpenses.Series[expensesTitle].IsValueShownAsLabel = false;
             this.chartIncomeExpenses.Series[expensesTitle].IsVisibleInLegend = true;
-            this.chartIncomeExpenses.Series[expensesTitle].Color = Color.Red;
+            this.chartIncomeExpenses.Series[expensesTitle].Color =
+                Utilities.CommonMethods.GetLighterColor(Color.Crimson);
+            this.chartIncomeExpenses.Series[expensesTitle].BackSecondaryColor =
+                Utilities.CommonMethods.GetDarkerColor(Color.Crimson);
+
+            this.chartIncomeExpenses.Series[expensesTitle].BackGradientStyle = GradientStyle.LeftRight;
+            this.chartIncomeExpenses.ChartAreas[0].BackColor = Color.LightYellow;
+            this.chartIncomeExpenses.ChartAreas[0].BackSecondaryColor = Color.White;
+            this.chartIncomeExpenses.ChartAreas[0].BackGradientStyle = GradientStyle.LeftRight;
+            this.chartIncomeExpenses.ChartAreas[0].BorderColor = Color.Black;
+            this.chartIncomeExpenses.ChartAreas[0].BorderDashStyle = ChartDashStyle.Solid;
+            this.chartIncomeExpenses.ChartAreas[0].BorderWidth = 1;
+            this.chartIncomeExpenses.ChartAreas[0].ShadowOffset = 3;
+            //this.chartIncomeExpenses.BorderSkin.SkinStyle = BorderSkinStyle.Emboss;
         }
 
 

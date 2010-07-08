@@ -90,6 +90,10 @@
             // 
             // chartIncomeExpenses
             // 
+            this.chartIncomeExpenses.BackSecondaryColor = System.Drawing.Color.Transparent;
+            this.chartIncomeExpenses.BorderSkin.BackSecondaryColor = System.Drawing.Color.Transparent;
+            this.chartIncomeExpenses.BorderSkin.PageColor = System.Drawing.Color.Transparent;
+            this.chartIncomeExpenses.BorderSkin.SkinStyle = System.Windows.Forms.DataVisualization.Charting.BorderSkinStyle.Emboss;
             chartArea1.Name = "ChartArea1";
             this.chartIncomeExpenses.ChartAreas.Add(chartArea1);
             this.chartIncomeExpenses.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -97,6 +101,7 @@
             this.chartIncomeExpenses.Legends.Add(legend1);
             this.chartIncomeExpenses.Location = new System.Drawing.Point(3, 31);
             this.chartIncomeExpenses.Name = "chartIncomeExpenses";
+            this.chartIncomeExpenses.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "Series1";
