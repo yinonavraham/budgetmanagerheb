@@ -1,0 +1,1 @@
+Tool for tracking the expences and income of a family. Enables the user to view the distribution of his expences & income over various categries over time.
